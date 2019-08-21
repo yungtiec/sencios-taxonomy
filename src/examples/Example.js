@@ -1,6 +1,6 @@
-import React, { Component, Fragment } from 'react';
-import Form from '@react-schema-form/bootstrap';
-import Print from '../utils/Print';
+import React, { Component, Fragment } from "react";
+import Form from "@react-schema-form/bootstrap";
+import Print from "../utils/Print";
 
 class Example extends Component {
   state = { cached: this.props.formData, formData: this.props.formData };
