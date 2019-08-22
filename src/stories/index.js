@@ -5,7 +5,7 @@ import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { linkTo } from "@storybook/addon-links";
 
-import { OriginalRjsf, SenciosRjsf } from "../examples";
+import { OriginalRjsf, SenciosRjsf, Field } from "../examples";
 import { simple, inline } from "../examples/schemas";
 
 const styles = {
@@ -22,3 +22,7 @@ storiesOf("Sencios rjsf", module)
   .addDecorator(OuterPadding)
   .add("simple form", () => <SenciosRjsf {...simple} />)
   .add("inline form", () => <SenciosRjsf {...inline} />);
+
+storiesOf("Field", module)
+  .addDecorator(OuterPadding)
+  .add("BooleanInput", () => <Field {...simple} />)
