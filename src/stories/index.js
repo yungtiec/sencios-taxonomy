@@ -5,13 +5,18 @@ import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { linkTo } from "@storybook/addon-links";
 
-import { Button, Welcome } from "@storybook/react/demo";
-import { Example, simple } from "../examples";
+import { Example, SimpleCustomizedExample, simple } from "../examples";
 
-storiesOf("Welcome", module).add("to Storybook", () => <Welcome showApp={linkTo("Button")} />);
+const styles = {
+  padding: "25px"
+};
 
-storiesOf("Button", module)
-  .add("with text", () => <Button onClick={action("clicked")}>Hello Button</Button>)
-  .add("with some emoji", () => <Button onClick={action("clicked")}>😀 😎 👍 💯</Button>);
+const OuterPadding = storyFn => <div style={styles}>{storyFn()}</div>;
 
-storiesOf("rjsf official example", module).add("simple", () => <Example {...simple} />);
+storiesOf("rjsf official example", module)
+  .addDecorator(OuterPadding)
+  .add("simple", () => <Example {...simple} />);
+
+storiesOf("customized example", module)
+  .addDecorator(OuterPadding)
+  .add("with red label", () => <SimpleCustomizedExample {...simple} />);
