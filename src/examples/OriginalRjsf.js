@@ -1,23 +1,8 @@
 import React, { Component, Fragment } from "react";
-import {
-  widgets as bootstrapWidgets,
-  templates as bootstrapTemplates
-} from "@react-schema-form/bootstrap";
-import { withTheme, Form } from "@react-schema-form/core";
-import templates from "../components/templates";
+import Form from "@react-schema-form/bootstrap";
 import Print from "../utils/Print";
 
-const SenciosForm = withTheme("SenciosTheme", {
-  templates: {
-    ...bootstrapTemplates,
-    ...templates
-  },
-  widgets: {
-    ...bootstrapWidgets
-  }
-})(Form);
-
-class Example extends Component {
+class OriginalRjsf extends Component {
   state = { cached: this.props.formData, formData: this.props.formData };
 
   static getDerivedStateFromProps(props, state) {
@@ -36,7 +21,7 @@ class Example extends Component {
 
     return (
       <Fragment>
-        <SenciosForm
+        <Form
           {...example}
           schema={schema}
           uiSchema={uiSchema}
@@ -49,4 +34,4 @@ class Example extends Component {
   }
 }
 
-export default Example;
+export default OriginalRjsf;

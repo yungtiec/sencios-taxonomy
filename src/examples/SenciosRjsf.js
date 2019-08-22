@@ -1,8 +1,24 @@
 import React, { Component, Fragment } from "react";
-import Form from "@react-schema-form/bootstrap";
+import {
+  widgets as bootstrapWidgets,
+  templates as bootstrapTemplates
+} from "@react-schema-form/bootstrap";
+import { withTheme, Form } from "@react-schema-form/core";
+import templates from "../components/templates";
+import fields from "../components/fields";
 import Print from "../utils/Print";
 
-class Example extends Component {
+const SenciosForm = withTheme("SenciosTheme", {
+  templates: {
+    ...bootstrapTemplates,
+    ...templates
+  },
+  widgets: {
+    ...bootstrapWidgets
+  }
+})(Form);
+
+class SenciosRjsf extends Component {
   state = { cached: this.props.formData, formData: this.props.formData };
 
   static getDerivedStateFromProps(props, state) {
@@ -21,12 +37,18 @@ class Example extends Component {
 
     return (
       <Fragment>
-        <Form
+        <SenciosForm
           {...example}
           schema={schema}
           uiSchema={uiSchema}
           formData={this.state.formData}
           onChange={this.handleChange}
+          noHtml5Validate={true}
+          fields={
+            fields
+          } /*
+            weird that fields are not specified in withTheme func
+          */
         />
         <Print data={this.state.formData} />
       </Fragment>
@@ -34,4 +56,4 @@ class Example extends Component {
   }
 }
 
-export default Example;
+export default SenciosRjsf;

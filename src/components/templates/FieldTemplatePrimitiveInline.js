@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
+import Flexbox from "flexbox-react";
 
 export const REQUIRED_FIELD_SYMBOL = "*";
 
@@ -10,7 +11,7 @@ function Label(props) {
     return <div />;
   }
   return (
-    <label className="col-form-label" htmlFor={id}>
+    <label className="" htmlFor={id}>
       {label}
       {required && <span className="required">{REQUIRED_FIELD_SYMBOL}</span>}
     </label>
@@ -72,18 +73,21 @@ function FieldTemplate(props) {
     return children;
   }
 
-  console.log("this");
   const classNames = [props.classNames, "form-group"].join(" ").trim();
 
   return (
     <div className={classNames} data-testid={testId}>
-      <div className="test text-danger">
-        {displayLabel && <Label label={label} required={required} id={id} />}
-      </div>
-      {displayLabel && description ? description : null}
-      {children}
-      <ErrorList errors={errors} />
-      <Help help={help} />
+      <Flexbox justifyContent="space-between" alignItems="flex-start">
+        <Flexbox width="150px" flexDirection="column">
+          {displayLabel && <Label label={label} required={required} id={id} />}
+          {displayLabel && description ? description : null}
+        </Flexbox>
+        <Flexbox flexGrow={1} flexDirection="column">
+          {children}
+          <ErrorList errors={errors} />
+          <Help help={help} />
+        </Flexbox>
+      </Flexbox>
     </div>
   );
 }

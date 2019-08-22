@@ -5,7 +5,8 @@ import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { linkTo } from "@storybook/addon-links";
 
-import { Example, SimpleCustomizedExample, simple } from "../examples";
+import { OriginalRjsf, SenciosRjsf } from "../examples";
+import { simple, inline } from "../examples/schemas";
 
 const styles = {
   padding: "25px"
@@ -13,10 +14,11 @@ const styles = {
 
 const OuterPadding = storyFn => <div style={styles}>{storyFn()}</div>;
 
-storiesOf("rjsf official example", module)
+storiesOf("Original rjsf", module)
   .addDecorator(OuterPadding)
-  .add("simple", () => <Example {...simple} />);
+  .add("simple form", () => <OriginalRjsf {...simple} />);
 
-storiesOf("customized example", module)
+storiesOf("Sencios rjsf", module)
   .addDecorator(OuterPadding)
-  .add("with red label", () => <SimpleCustomizedExample {...simple} />);
+  .add("simple form", () => <SenciosRjsf {...simple} />)
+  .add("inline form", () => <SenciosRjsf {...inline} />);

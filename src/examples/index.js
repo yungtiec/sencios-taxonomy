@@ -1,3 +1,2 @@
-export { default as Example } from "./Example";
-export { default as simple } from "./simple";
-export { default as SimpleCustomizedExample } from "./SimpleCustomizedExample";
+export { default as OriginalRjsf } from "./OriginalRjsf";
+export { default as SenciosRjsf } from "./SenciosRjsf";

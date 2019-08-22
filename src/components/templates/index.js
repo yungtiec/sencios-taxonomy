@@ -1,5 +1,9 @@
-import FieldTemplate from "./FieldTemplate";
+import FieldTemplateObject from "./FieldTemplateObject";
+import FieldTemplatePrimitive from "./FieldTemplatePrimitive";
+import FieldTemplatePrimitiveInline from "./FieldTemplatePrimitiveInline";
 
 export default {
-  FieldTemplate
+  FieldTemplateObject,
+  FieldTemplatePrimitive,
+  FieldTemplatePrimitiveInline
 };
