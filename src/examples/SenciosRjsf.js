@@ -6,6 +6,7 @@ import {
 import { withTheme, Form } from "@react-schema-form/core";
 import templates from "../components/templates";
 import fields from "../components/fields";
+import widgets from "../components/widgets";
 import Print from "../utils/Print";
 
 const SenciosForm = withTheme("SenciosTheme", {
@@ -14,7 +15,8 @@ const SenciosForm = withTheme("SenciosTheme", {
     ...templates
   },
   widgets: {
-    ...bootstrapWidgets
+    ...bootstrapWidgets,
+    ...widgets
   }
 })(Form);
 
