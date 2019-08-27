@@ -13,7 +13,10 @@ export default {
   },
   uiSchema: {
     selectWidgetOptions: {
-      "ui:widget": "StringSelect"
+      "ui:widget": "StringSelect",
+      "ui:options": {
+        inline: true
+      }
     }
   },
   formData: {}
