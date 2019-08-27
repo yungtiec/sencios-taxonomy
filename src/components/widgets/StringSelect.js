@@ -8,7 +8,7 @@ const getSelectOptionFromValue = (value, options) => {
   return options.filter(option => option.value === value)[0];
 };
 
-function BaseInput(props) {
+function StringSelect(props) {
   // Note: since React 15.2.0 we can't forward unknown element attributes, so we
   // exclude the "options" and "schema" ones here.
   if (!props.id) {
@@ -40,6 +40,8 @@ function BaseInput(props) {
 
   return (
     <Select
+      isDisabled={disabled}
+      autofocus={autofocus}
       value={selected}
       onChange={_onChange}
       options={enumOptions}
@@ -48,7 +50,7 @@ function BaseInput(props) {
   );
 }
 
-BaseInput.defaultProps = {
+StringSelect.defaultProps = {
   type: "text",
   required: false,
   disabled: false,
@@ -57,7 +59,7 @@ BaseInput.defaultProps = {
 };
 
 if (process.env.NODE_ENV !== "production") {
-  BaseInput.propTypes = {
+  StringSelect.propTypes = {
     id: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
     value: PropTypes.any,
@@ -71,4 +73,4 @@ if (process.env.NODE_ENV !== "production") {
   };
 }
 
-export default BaseInput;
+export default StringSelect;
