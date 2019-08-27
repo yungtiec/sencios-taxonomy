@@ -38,8 +38,10 @@ function NumnberInput(props) {
       readOnly={readonly}
       disabled={disabled}
       autoFocus={autofocus}
-      step={1}
+      step={schema.step || 1}
       value={value == null ? "" : value}
+      max={schema.max || Infinity}
+      min={schema.min || -Infinity}
       {...cleanProps}
       onChange={_onChange}
       onBlur={onBlur && (event => onBlur(inputProps.id, event.target.value))}

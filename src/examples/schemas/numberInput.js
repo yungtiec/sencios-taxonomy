@@ -5,7 +5,8 @@ export default {
     properties: {
       numberInput: {
         title: "number input",
-        type: "number"
+        type: "number",
+        step: 100
       }
     }
   },
