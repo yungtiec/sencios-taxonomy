@@ -56,7 +56,8 @@ function SchemaFieldRender(props) {
     FieldTemplateObject,
     FieldTemplatePrimitive,
     FieldTemplatePrimitiveInline,
-    DescriptionTemplate
+    DescriptionTemplatePrimitive,
+    DescriptionTemplateObject
   } = templates;
   const disabled = Boolean(props.disabled || uiSchema["ui:disabled"]);
   const readonly = Boolean(props.readonly || uiSchema["ui:readonly"]);
@@ -114,6 +115,9 @@ function SchemaFieldRender(props) {
     .join(" ")
     .trim();
   const testId = [id, errors && errors.length > 0 ? "has-error" : ""].join(" ").trim();
+
+  const DescriptionTemplate =
+    type === "object" ? DescriptionTemplateObject : DescriptionTemplatePrimitive;
 
   const fieldProps = {
     description: (
