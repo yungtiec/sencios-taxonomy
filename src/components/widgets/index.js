@@ -1,7 +1,7 @@
-import StringSelect from "./StringSelect";
+import SelectWidget from "./SelectWidget";
 import NumberInput from "./NumberInput";
 
 export default {
-  StringSelect,
+  SelectWidget,
   NumberInput
 };

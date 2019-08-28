@@ -1,4 +1,5 @@
 /*eslint no-unused-vars: off*/
+import "./ReactSelect.scss";
 import React from "react";
 import PropTypes from "prop-types";
 import Select from "react-select";
@@ -8,7 +9,7 @@ const getSelectOptionFromValue = (value, options) => {
   return options.filter(option => option.value === value)[0];
 };
 
-function StringSelect(props) {
+function SelectWidget(props) {
   // Note: since React 15.2.0 we can't forward unknown element attributes, so we
   // exclude the "options" and "schema" ones here.
   if (!props.id) {
@@ -40,6 +41,8 @@ function StringSelect(props) {
 
   return (
     <Select
+      className="react-select-container"
+      classNamePrefix="react-select"
       isDisabled={disabled}
       autofocus={autofocus}
       value={selected}
@@ -50,7 +53,7 @@ function StringSelect(props) {
   );
 }
 
-StringSelect.defaultProps = {
+SelectWidget.defaultProps = {
   type: "text",
   required: false,
   disabled: false,
@@ -59,7 +62,7 @@ StringSelect.defaultProps = {
 };
 
 if (process.env.NODE_ENV !== "production") {
-  StringSelect.propTypes = {
+  SelectWidget.propTypes = {
     id: PropTypes.string.isRequired,
     placeholder: PropTypes.string,
     value: PropTypes.any,
@@ -73,4 +76,4 @@ if (process.env.NODE_ENV !== "production") {
   };
 }
 
-export default StringSelect;
+export default SelectWidget;
