@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "./BooleanInput.scss"
-console.log({styles})
+import "./BooleanInput.scss";
+
 
 const BooleanInput = props => {
   const { handleChange, value } = props;
