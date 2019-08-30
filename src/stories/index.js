@@ -6,7 +6,7 @@ import { action } from "@storybook/addon-actions";
 import { linkTo } from "@storybook/addon-links";
 
 import { OriginalRjsf, SenciosRjsf, Field } from "../examples";
-import { simple, inline, select, numberInput } from "../examples/schemas";
+import { simple, inline, select, numberInput, booleanInput } from "../examples/schemas";
 
 const styles = {
   padding: "25px"
@@ -22,9 +22,6 @@ storiesOf("Sencios rjsf", module)
   .addDecorator(OuterPadding)
   .add("simple form", () => <SenciosRjsf {...simple} />)
   .add("inline form", () => <SenciosRjsf {...inline} />)
-  .add("string select", () => <SenciosRjsf {...select} />)
+  .add("strign select", () => <SenciosRjsf {...select} />)
+  .add("boolean input", () => <SenciosRjsf {...booleanInput} />)
   .add("number input", () => <SenciosRjsf {...numberInput} />);
-
-storiesOf("Field", module)
-  .addDecorator(OuterPadding)
-  .add("BooleanInput", () => <Field {...simple} />);
