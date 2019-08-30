@@ -1,0 +1,21 @@
+.react-select-container .react-select__control {
+  &:hover {
+    border-color: #ced4da;
+  }
+  &--is-focused,
+  &--is-focused:hover {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+}
+
+.react-select__indicator {
+  color: #ced4da;
+}
+
+.react-select__indicator-separator {
+  background-color: #ced4da;
+}

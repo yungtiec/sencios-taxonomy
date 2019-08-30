@@ -1,7 +1,9 @@
-import StringSelect from "./StringSelect";
-import BooleanInput from "./BooleanInput"
+import SelectWidget from "./SelectWidget";
+import NumberInput from "./NumberInput";
+import BooleanInput from "./BooleanInput";
 
 export default {
-  StringSelect,
+  SelectWidget,
+  NumberInput,
   BooleanInput
 };

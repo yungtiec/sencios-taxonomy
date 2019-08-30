@@ -47,7 +47,7 @@ export default {
       }
     },
     age: {
-      "ui:widget": "updown",
+      "ui:widget": "NumberInput",
       "ui:title": "Age of person",
       "ui:description": "(earthian year)",
       "ui:options": {

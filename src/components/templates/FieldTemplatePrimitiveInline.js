@@ -11,9 +11,9 @@ function Label(props) {
     return <div />;
   }
   return (
-    <label className="" htmlFor={id}>
+    <label className="mb-0" htmlFor={id}>
       {label}
-      {required && <span className="required">{REQUIRED_FIELD_SYMBOL}</span>}
+      {required && <span className="required text-danger">{REQUIRED_FIELD_SYMBOL}</span>}
     </label>
   );
 }
@@ -26,7 +26,7 @@ function Help(props) {
   }
   if (typeof help === "string") {
     return (
-      <p className="text-muted" data-testid="help-text">
+      <p className="text-muted mb-0" data-testid="help-text">
         <small>{help}</small>
       </p>
     );
@@ -77,12 +77,12 @@ function FieldTemplate(props) {
 
   return (
     <div className={classNames} data-testid={testId}>
-      <Flexbox justifyContent="space-between" alignItems="flex-start">
-        <Flexbox width="150px" flexDirection="column">
+      <Flexbox justifyContent="space-between" alignItems="center">
+        <Flexbox>
           {displayLabel && <Label label={label} required={required} id={id} />}
-          {displayLabel && description ? description : null}
+          {description && description ? description : null}
         </Flexbox>
-        <Flexbox flexGrow={1} flexDirection="column">
+        <Flexbox width="300px" flexDirection="column">
           {children}
           <ErrorList errors={errors} />
           <Help help={help} />
