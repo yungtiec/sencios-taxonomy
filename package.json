@@ -61,6 +61,6 @@
     "@storybook/addon-links": "^5.1.11",
     "@storybook/react": "^5.1.11",
     "eslint-config-prettier": "^6.1.0",
-    "node-sass": "^4.12.0"
+    "node-sass": "^7.0.0"
   }
 }
